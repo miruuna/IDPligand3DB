@@ -1,0 +1,5 @@
+
+.env.dev
+*.env
+
+IDPLigand3DB_env/
