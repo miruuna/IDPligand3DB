@@ -1,4 +1,12 @@
 services:
+
+  db:
+    image: postgres:15
+    volumes:
+      - postgres_data:/var/lib/postgresql/data/
+
+    env_file:
+      - ./.env.dev
   web:
     build: ./IDPLigand3DB_app
     command: python manage.py runserver 0.0.0.0:8000
@@ -10,12 +18,5 @@ services:
       - ./.env.dev
     depends_on:
       - db
-  db:
-    image: postgres:15
-    volumes:
-      - postgres_data:/var/lib/postgresql/data/
-    env_file:
-      - ./.env.dev
-
 volumes:
   postgres_data:

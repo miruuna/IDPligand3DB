@@ -1,5 +1,7 @@
 
 .env.dev
+.env.dev.db
 *.env
 
 IDPLigand3DB_env/
+postgres_data/
